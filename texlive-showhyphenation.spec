@@ -1,6 +1,6 @@
 Name:		texlive-showhyphenation
 Version:	63578
-Release:	1
+Release:	2
 Summary:	Marking of hyphenation points
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/showhyphenation
