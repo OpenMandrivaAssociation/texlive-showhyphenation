@@ -3,7 +3,7 @@ Version:	67602
 Release:	1
 Summary:	Marking of hyphenation points
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/showhyphenation
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/showhyphenation
 License:	lppl1.3c
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/showhyphenation.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/showhyphenation.doc.r%{version}.tar.xz
