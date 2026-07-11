@@ -1,40 +1,24 @@
-Name:		texlive-showhyphenation
-Version:	67602
-Release:	1
+%global tl_name showhyphenation
+%global tl_revision 77682
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	0.3
+Release:	%{tl_revision}.1
 Summary:	Marking of hyphenation points
 Group:		Publishing
-URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/showhyphenation
+URL:		https://www.ctan.org/tex-archive/macros/luatex/latex/showhyphenation
 License:	lppl1.3c
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/showhyphenation.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/showhyphenation.doc.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/showhyphenation.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/showhyphenation.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-The package shows the hyphenation points in the document by
-either inserting small triangles below the baseline or by
-typesetting explicit hyphens. The markers are correctly placed
-even within ligatures and their size adjusts to the font size.
-By option the markers can be placed behind or in front of the
-glyphs. The package requires LuaLaTeX.
+The package shows the hyphenation points in the document by either
+inserting small triangles below the baseline or by typesetting explicit
+hyphens. The markers are correctly placed even within ligatures and
+their size adjusts to the font size. By option the markers can be placed
+behind or in front of the glyphs. The package requires LuaLaTeX.
 
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%{_texmfdistdir}/tex/lualatex/showhyphenation
-%doc %{_texmfdistdir}/doc/lualatex/showhyphenation
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
